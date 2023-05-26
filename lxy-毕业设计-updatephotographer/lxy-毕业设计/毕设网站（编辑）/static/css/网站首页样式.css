@@ -1,0 +1,26 @@
+#user_profile {
+    border-radius: 50%;
+    margin-top: 20px;
+    transition: all 1.3s;
+    opacity: 0;
+}
+
+#user_profile:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 3px #55555584;
+}
+
+#user_name_log {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 20px;
+    position: relative;
+    top: 11px;
+}
+
+#user_name_log:hover {
+    cursor: pointer;
+    color: #ffae00;
+}

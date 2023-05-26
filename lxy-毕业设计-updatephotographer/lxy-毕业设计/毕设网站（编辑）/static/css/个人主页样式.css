@@ -1,0 +1,180 @@
+/* 导航栏样式 */
+.header-section {
+    background-color: #f3f3f3;
+    position: relative;
+    top: 0;
+}
+
+.middle {
+    position: relative;
+    top: 0;
+}
+
+/* 左侧 */
+.left-part {
+    width: 300px;
+    margin-left: 20px;
+    /* background-color: pink; */
+    /* border: 2px solid #000; */
+    float: left;
+}
+
+/* 头像部分样式 */
+#avatar {
+    width: 200px;
+    height: 160px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 0;
+    border: 2px solid #000;
+    margin: 15px 20px 15px 40px;
+}
+
+.menu {
+    width: 100%;
+}
+
+.menu .menu_list {
+    height: 50px;
+
+}
+
+.menu .menu_list>span {
+    display: inline-block;
+    line-height: 50px;
+    width: 60%;
+}
+
+.menu .menu_list>span:hover {
+    color: #ffae0070;
+    cursor: pointer;
+}
+
+.add_pic:hover {
+    cursor: pointer;
+    background-color: #ffae00;
+}
+
+.add_menu {
+    display: block;
+    width: 100px;
+    height: 30px;
+    background-color: #ffae0070;
+    margin: 10px;
+    text-align: center;
+    line-height: 30px;
+
+}
+
+.add_menu:hover {
+    cursor: pointer;
+    background-color: #ffae00;
+}
+
+
+/* =======================右侧============================================ */
+.right-part {
+    float: left;
+    width: 70%;
+    /* background-color: #f3f3f3; */
+    margin-left: 50px;
+}
+
+.right-part .btn {
+    width: 100%;
+    margin: 0 auto;
+    height: 50px;
+    /* background-color: #f3f3f3; */
+}
+
+.right-part .btn button {
+    background-color: #ffae0070;
+    color: #000;
+    border: 0;
+    margin: 0px 10px;
+    font-size: 18px;
+}
+
+.right-part .btn button:hover,
+.menu_list>button:hover {
+    cursor: pointer;
+    background-color: #ffae00;
+}
+
+.menu_list>button {
+    background-color: #ffae0070;
+    color: #000;
+    border: 0;
+    font-size: 18px;
+    padding: 5px;
+    margin-left: 5px;
+    float: right;
+}
+
+.show_box {
+    border: 1px solid #000;
+    width: 90%;
+    height: 500px;
+    margin: 10px auto;
+}
+
+.not_edit_box {
+    border: 1px solid #000;
+    width: 90%;
+    height: 500px;
+    margin: 10px auto;
+    display: none;
+}
+
+.box1 .box_pic,
+.box2 .box_pic,
+.box3 .box_pic,
+.box4 .box_pic,
+.box5 .box_pic {
+    float: left;
+    margin: 10px;
+}
+
+
+/* 新增 */
+.pic {
+    display: block;
+    width: 200px;
+    height: 152px;
+    float: left;
+    margin: 10px 0 40px 20px;
+    border: 1px solid #555;
+    position: relative;
+    top: 0;
+}
+
+.pic:hover {
+    cursor: pointer;
+    /* background-color: antiquewhite; */
+}
+
+
+
+.del {
+    position: absolute;
+    right: 0px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    color: #fff;
+    line-height: 20px;
+    text-align: center;
+    opacity: 2;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.del:hover {
+    cursor: pointer;
+    background-color: #434141c5;
+}
+
+.menu_name {
+    margin: 10px 20px;
+}

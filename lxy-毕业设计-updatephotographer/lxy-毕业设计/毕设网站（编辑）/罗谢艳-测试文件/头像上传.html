@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="hero">
+        <div class="card">
+            <img src="../图片库/述禾-头像.png" id="profile-pic" width="150px" height="200px">
+            <label for="input-file">update imgage</label>
+            <input type="file" accept="imge/jpeg, imge/png, imge/jpg" id="input-file">
+        </div>
+    </div>
+    <script>
+        let profilePic = document.getElementById("profile-pic");
+        let inputFile = document.getElementById("input-file")
+
+        inputFile.onchange = function() {
+            profilePic.src = URL.createObjectURL(inputFile.files[0])
+        }
+    </script>
+</body>
+</html>

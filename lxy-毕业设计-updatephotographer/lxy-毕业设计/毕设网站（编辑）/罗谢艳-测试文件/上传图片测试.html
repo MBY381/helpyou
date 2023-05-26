@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="file" id="file-input" multiple>
+    <button id="upload-button">上传图片</button>
+    <div id="preview-container"></div>
+
+    <script>
+        const fileInput = document.getElementById('file-input');
+        const previewContainer = document.getElementById('preview-container');
+
+        document.getElementById('upload-button').addEventListener('click', () => {
+            const files = Array.from(fileInput.files);
+
+            files.forEach((file) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = () => {
+                    const img = document.createElement('img');
+                    img.src = reader.result;
+                    previewContainer.appendChild(img);
+                    var x = previewContainer.innerHTML
+                    previewContainer.innerHTML = x
+                };
+            });
+        });
+    </script>
+</body>
+
+</html>

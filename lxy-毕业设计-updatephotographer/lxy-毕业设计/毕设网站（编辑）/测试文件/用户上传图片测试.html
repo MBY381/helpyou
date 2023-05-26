@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 显示上传图片的 img 元素 -->
+<img id="upload-img" src="../static/picture/1.jpg" alt="">
+
+<!-- 点击 img 元素触发文件选择对话框 -->
+<script>
+  const uploadImg = document.getElementById('upload-img');
+  uploadImg.addEventListener('click', () => {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
+    input.addEventListener('change', () => {
+      const file = input.files[0];
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        uploadImg.src = reader.result;
+        // 将图片数据发送到服务器端
+        const formData = new FormData();
+        formData.append('file', file);
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'http://127.0.0.1:5000/upload');
+        xhr.onload = () => {
+          if (xhr.status === 200) {
+            const data = JSON.parse(xhr.responseText);
+            // 将服务器返回的图片 URL 插入到数据库中
+            const url = data.url;
+            // 更新页面中的内容
+            const image = document.createElement('img');
+            image.src = url;
+            document.body.appendChild(image);
+          } else {
+            console.error('上传图片失败:', xhr.statusText);
+          }
+        };
+        xhr.send(formData);
+      };
+    });
+    input.click();
+  });
+</script>
+</body>
+
+</html>

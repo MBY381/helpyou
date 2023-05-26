@@ -1,0 +1,184 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>登录界面</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- jQuery latest version -->
+    <script src="static/js/jquery-3.1.1.min.js"></script>
+
+    <!-- Favicon -->
+
+
+    <link href="static/css/css.css" rel="stylesheet">
+
+    <!-- All CSS Files -->
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <!-- Icon Font -->
+    <link rel="stylesheet" href="static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/css/pe-icon-7-stroke.css">
+    <!-- Plugins css file -->
+    <link rel="stylesheet" href="static/css/plugins.css">
+    <!-- Theme main style -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="static/css/responsive.css">
+
+    <!-- Modernizr JS -->
+    <script src="static/js/modernizr-2.8.3.min.js"></script>
+
+</head>
+
+<body>
+
+<!-- Body main wrapper start -->
+<div class="wrapper">
+
+    <!-- 开始-头部内容 -->
+    <header class="header-section section sticker header-transparent" style="background-color: rgb(243,243,243);">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- logo -->
+                <div class="col-md-2 col-sm-6 col-xs-6">
+                    <div class="header-logo">
+                        <!-- <a href="01网站首页.html"><img src="static/picture/LOGO.png" alt="main logo"></a> -->
+                    </div>
+                </div>
+                <!-- 登录&注册 -->
+                <div class="col-md-2 col-sm-6 col-xs-6 float-right">
+                    <div class="header-option-btns float-right">
+                        <!-- 登录 -->
+                        <div class="header-search float-left">
+                            <ul>
+                                <li><a href="02登录.html">登录</a></li>
+                            </ul>
+                        </div>
+                        <!-- 注册 -->
+                        <div class="header-search float-left">
+                            <ul>
+                                <li><a href="03注册.html">注册</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 导航栏 -->
+                <div class="col-md-8 col-xs-12">
+                    <nav class="main-menu text-center">
+                        <ul>
+                            <li><a href="01网站首页.html">首页</a></li>
+                            <!-- <li><a href="[05-14]个人主页.html">上传作品</a></li> -->
+                            <li ><a href="[05-14]个人主页.html">上传作品</a></li>
+                            <li><a href="04发现.html">发现</a>
+                            </li>
+                            <li><a href="05摄影师.html">摄影师</a>
+                            </li>
+                            <li><a href="06活动.html">活动</a></li>
+                            <li><a href="07关于我们.html">关于我们</a></li>
+                        </ul>
+                        <!-- 用户头像处 -->
+                        <!-- <div style="display: inline-block; position: relative; top:0">
+                            <img src="static/picture/述禾-头像.png" width="40px" height="40px" id="user_profile">
+                            <span id="user_name_log"></span>
+                        </div> -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- END 头部内容 -->
+
+    <!-- Search Modal -->
+    <div class="search-modal modal fade text-center" id="myModal">
+        <div class="header-search-form">
+            <form action="#" id="login_form">
+                <input type="text" placeholder="Search">
+                <button><i class="pe-7s-search"></i></button>
+            </form>
+        </div>
+    </div>
+    <!-- 登录窗口 -->
+    <div class="page-section section pt-100 pb-100" style="margin-top: 60px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+                    <div class="login-reg-form">
+                        <form action="#">
+                            <div class="row">
+                                <div class="col-xs-12 mb-20">
+                                    <label for="username">用户名<span class="required">*</span></label>
+                                    <input name="username" id="username" type="text">
+                                </div>
+                                <div class="col-xs-12 mb-20">
+                                    <label for="password">密码<span class="required">*</span></label>
+                                    <input name="password" id="password" type="password">
+                                </div>
+                                <div class="col-xs-12 mb-20">
+                                    <input value="登录" name="login" class="inline" type="button"
+                                           style="width: 100px;height: 35px;margin-top: 16px;border-color: rgb(221,221,221);background:#f7b900;color:white">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- PAGE SECTION END -->
+
+
+</div>
+<!-- Body main wrapper end -->
+
+
+<!-- Placed JS at the end of the document so the pages load faster -->
+
+<script>
+    const currentUser = {
+        id: "",
+        avatar_path: ""
+    }
+    const idInput = document.querySelector('#username');
+    const pwdInput = document.querySelector('#password');
+    const loginBTN = document.querySelector('#login');
+    loginBTN.addEventListener('input', () => {
+        login()
+    })
+    function login() {
+        console.log(idInput.value)
+        console.log(pwdInput.value)
+        // fetch('http://127.0.0.1:5000/menu_3_show')
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         // 将获取到的 id 和 path 存储到 userData 变量中
+        //         data.id.forEach((id, i) => {
+        //             // 在 userData 数组末尾添加新的元素
+        //             userData.push({
+        //                 name: `${id}`,
+        //                 image: `${data.path[i]}`,
+        //             });
+        //         });
+        //         console.log(userData);  // 输出更新后的 userData 数组
+        //         userData.forEach(user => addUserCard(user));
+        //     })
+        //     .catch(error => console.error('Error:', error));
+    }
+</script>
+<!-- Bootstrap js -->
+<script src="static/js/bootstrap.min.js"></script>
+<!-- Plugins js -->
+<script src="static/js/plugins.js"></script>
+<!-- Ajax Mail js -->
+<script src="static/js/ajax-mail.js"></script>
+<!-- Main js -->
+<script src="static/js/main.js"></script>
+
+<!-- 登录界面表单验证 -->
+<script src="static/js/登录页面表单验证.js"></script>
+
+</body>
+
+</html>

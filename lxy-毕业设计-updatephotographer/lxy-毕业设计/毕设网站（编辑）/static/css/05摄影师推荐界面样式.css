@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header-section {
+    position: relative;
+    top: 0;
+    background-color: #f3f3f3;
+}
+
+.middle {
+    width: 1200px;
+    border: 1px solid #000;
+    position: absolute;
+    top: 100px;
+    margin-left: 100px;
+
+}
+
+.box {
+    position: relative;
+    top: 0;
+    width: 285px;
+    height: 240px;
+    background-color: bisque;
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.top{
+    width: 100%;
+    height: 50%;
+    background-color: pink;
+}
+
+.bottom {
+    width: 100%;
+    height: 50%;
+}
+
+.top1 {
+    background-image: url(../../static/picture/yokoego-头像.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.top1+img {
+    border-radius: 50%;
+    position: absolute;
+    top: 90px;
+    left: 112.5px;
+}
+
+.top1+img:hover {
+    box-shadow: 2px 2px 2px #55555572;
+}
